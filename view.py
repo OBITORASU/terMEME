@@ -3,7 +3,7 @@ import sys
 from getch import getch
 import random
 
-
+# Clear the terminal screen
 subprocess.call("clear", shell=True)
 
 from clint.textui import colored
@@ -11,15 +11,19 @@ from banner import banner
 from meme import get_meme
 
 
-
+# Function to display the memes
 def display(result):
     lst = []
     while True:
+        # Randomize the memes
         url = random.choice(result)
+        # Make sure the memes don't go on repeating
         if url not in lst:
+            # Use w3m to display the memes inside the terminal
             subprocess.call("w3m -o ext_image_viewer=false -o confirm_qq=false {}".format(url), shell=True)
             subprocess.call("clear", shell=True)
             lst.append(url)
+            # Allow the user to select whether they want to continue or quit via this prompt
             print(colored.green("Press e to exit or any other key to continue...."))
             key = getch()
             if key=="e":
@@ -36,6 +40,7 @@ Select a Category:
 5) Exit
 """))
 
+# Loop until a valid choice is encountered
 while(True):
     
     ch = int(input(colored.green("Enter your choice: ")))
@@ -44,11 +49,12 @@ while(True):
             sys.exit()
         else:
             break
-        
+   
     else:
         print(colored.red("[-] Invalid input, please enter a valid input."))
         print()
 
+# Fetch the memes and display them
 if ch==1:
     print(colored.green("[+] Fetching the top memes from r/dankmemes."))  
     result = get_meme("top")  
