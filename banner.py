@@ -1,4 +1,6 @@
 from clint.textui import colored
+# coding=utf-8
+
 
 banner = colored.yellow("""
                         ⠙⠋⠉⠉⠉⠈⠉⠉⠙⢿⣿⣿⣿⣿⣿⡿⠋⠉⠀⠀⠀⠀⠀⠈⠉⠉⠛⢿⣿⣿
