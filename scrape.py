@@ -18,7 +18,7 @@ def get_img(str1, str2):
     for post in r.json()['data']['children']:
         
         if ([ele for ele in formats if(ele in post['data']['url'])]):
-            meme_list.append(post['data']['url'])
+            img_list.append(post['data']['url'])
     
     # Return the list of image urls
     return (img_list)
