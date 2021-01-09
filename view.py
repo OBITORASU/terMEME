@@ -15,6 +15,7 @@ from scrape import get_img
 
 # Function to display url using w3m-img inside the terminal
 def display(result):
+    # Appending to a list and checking urls against it to prevent images from reappearing when randomizing 
     lst = []
     while True:
         url = random.choice(result)
