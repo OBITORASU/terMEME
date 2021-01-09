@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import time
 import random
 
 # Clear up the terminal screen
@@ -69,22 +70,26 @@ while(True):
 
 # Fetch the image url based on the user set parameters and display them        
 if ch==1:
-    print(colored.green("[+] Fetching the top memes from {}....".format(sub)))  
+    print(colored.green("[+] Fetching the top memes from r/{}....".format(sub)))  
+    time.sleep(1)
     result = get_meme(sub, "top")  
     display(result)
 
 elif ch==2:
-    print(colored.green("[+] Fetching the new memes from {}....".format(sub)))
+    print(colored.green("[+] Fetching the new memes from r/{}....".format(sub)))
+    time.sleep(1)
     result = get_meme(sub, "new")
     display(result)
 
 elif ch==3:
-    print(colored.green("[+] Fetching the hot memes from {}....".format(sub)))
+    print(colored.green("[+] Fetching the hot memes from r/{}....".format(sub)))
+    time.sleep(1)
     result = get_meme(sub, "hot")
     display(result)
 
 elif ch==4:
-    print(colored.green("[+] Fetching the rising memes from {}....".format(sub)))
+    print(colored.green("[+] Fetching the rising memes from r/{}....".format(sub)))
+    time.sleep(1)
     result = get_meme(sub, "rising")
     display(result)
 
