@@ -41,7 +41,7 @@ while(True):
         print()
         break
     except URLError:
-        print(colored.green("[-] Invalid subreddit!"))
+        print(colored.red("[-] Invalid subreddit!"))
         print()
 
 
