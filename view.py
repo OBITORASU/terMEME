@@ -10,7 +10,7 @@ from urllib.request import urlopen, URLError
 from getch import getch
 from clint.textui import colored
 from banner import banner
-from meme import get_meme
+from scrape import get_img
 
 
 # Function to display url using w3m-img inside the terminal
@@ -72,25 +72,25 @@ while(True):
 if ch==1:
     print(colored.green("[+] Fetching the top memes from r/{}....".format(sub)))  
     time.sleep(1)
-    result = get_meme(sub, "top")  
+    result = get_img(sub, "top")  
     display(result)
 
 elif ch==2:
     print(colored.green("[+] Fetching the new memes from r/{}....".format(sub)))
     time.sleep(1)
-    result = get_meme(sub, "new")
+    result = get_img(sub, "new")
     display(result)
 
 elif ch==3:
     print(colored.green("[+] Fetching the hot memes from r/{}....".format(sub)))
     time.sleep(1)
-    result = get_meme(sub, "hot")
+    result = get_img(sub, "hot")
     display(result)
 
 elif ch==4:
     print(colored.green("[+] Fetching the rising memes from r/{}....".format(sub)))
     time.sleep(1)
-    result = get_meme(sub, "rising")
+    result = get_img(sub, "rising")
     display(result)
 
 
