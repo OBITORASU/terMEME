@@ -46,7 +46,8 @@ while(True):
 
 
 # Category menu
-print (colored.green("""Wubba Lubba dub-dub
+print (colored.green("""Wubba Lubba dub-dub!
+
 Select a Category:
 1) Top
 2) New
