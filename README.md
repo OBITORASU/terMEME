@@ -1,7 +1,7 @@
 # terMEME
 ## A meme scrapper which displays memes inside your linux terminal.
 
-terMEME is a terminal application written in Python 3 which allows Linux users to view memes from r/dankmemes inside the comfort of their terminals.
+terMEME is a terminal based meme viewer written in Python 3 which allows Linux users to view memes from r/dankmemes inside the comfort of their terminals.
 
 ## Dependencies 
 
