@@ -2,6 +2,7 @@ import subprocess
 import sys
 import random
 
+# Clear up the terminal screen
 subprocess.call("clear", shell=True)
 
 from urllib.request import urlopen, URLError
@@ -11,7 +12,7 @@ from banner import banner
 from meme import get_meme
 
 
-
+# Function to display url using w3m-img inside the terminal
 def display(result):
     lst = []
     while True:
@@ -26,6 +27,7 @@ def display(result):
                 subprocess.call("clear", shell=True)
                 sys.exit()
 
+# Loop until user enters a valid subreddit
 while(True):
     sub = input(colored.green("Enter the name of a valid subreddit: "))
     print()
@@ -41,7 +43,7 @@ while(True):
         print()
 
 
-
+# Category menu
 print (colored.green("""Wubba Lubba dub-dub
 Select a Category:
 1) Top
@@ -51,6 +53,7 @@ Select a Category:
 5) Exit
 """))
 
+# Loop until valid category is selected
 while(True):
     
     ch = int(input(colored.green("Enter your choice: ")))
@@ -64,6 +67,7 @@ while(True):
         print(colored.red("[-] Invalid input detected please enter a valid input!"))
         print()
 
+# Fetch the image url based on the user set parameters and display them        
 if ch==1:
     print(colored.green("[+] Fetching the top memes from {}....".format(sub)))  
     result = get_meme(sub, "top")  
