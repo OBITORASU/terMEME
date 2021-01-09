@@ -3,7 +3,7 @@ import requests
 import time
 
 # Get a list of image url from a supplied subreddit and category 
-def get_meme(str1, str2):
+def get_img(str1, str2):
     # Big number for major shenanigans 
     number = 99999
     url = "https://www.reddit.com/r/{}/{}/".format(str1,str2)
@@ -11,7 +11,7 @@ def get_meme(str1, str2):
     r = requests.get("{}.json?limit={}".format(url, number), headers = {'user-agent': 'Mozilla/5.0'})
     
     # List to store urls and the following one to validate file format
-    meme_list = []
+    img_list = []
     formats = ["jpeg", "jpg", "png"]
     
     # Loop through all url and validate against permitted formats
@@ -21,7 +21,7 @@ def get_meme(str1, str2):
             meme_list.append(post['data']['url'])
     
     # Return the list of image urls
-    return (meme_list)
+    return (img_list)
 
 
 
