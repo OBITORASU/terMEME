@@ -60,6 +60,7 @@ Select a Category:
 while(True):
     
     ch = int(input(colored.green("Enter your choice: ")))
+    print()
     if ch==1 or ch==2 or ch==3 or ch==4 or ch==5:
         if ch==5:
             sys.exit()
