@@ -9,9 +9,8 @@ subprocess.call("clear", shell=True)
 from urllib.request import urlopen, URLError
 from getch import getch
 from clint.textui import colored
-from banner import banner
-from scrape import get_img
-
+from banner import *
+from scrape import *
 
 # Function to display url using w3m-img inside the terminal
 def display(result):
@@ -29,24 +28,12 @@ def display(result):
                 subprocess.call("clear", shell=True)
                 sys.exit()
 
-# Loop until user enters a valid subreddit
-while(True):
-    sub = input(colored.green("Enter the name of a valid subreddit: "))
-    print()
-    print(colored.green("[+] Checking subreddit validity...."))
-    print()
-    try:
-        urlopen("https://www.reddit.com/r/{}".format(sub))
-        print(colored.green("[+] Subreddit found!"))
-        print()
-        break
-    except URLError:
-        print(colored.red("[-] Invalid subreddit!"))
-        print()
-
+print(banner())
+print()
+sub = check_validity()
 
 # Category menu
-print (colored.green("""Wubba Lubba dub-dub!
+print (colored.green("""[+] Wubba Lubba dub-dub!
 
 Select a Category:
 1) Top
@@ -73,27 +60,46 @@ while(True):
 
 # Fetch the image url based on the user set parameters and display them        
 if ch==1:
-    print(colored.green("[+] Fetching the top memes from r/{}....".format(sub)))  
+    print(colored.green("[+] Fetching the top images from r/{}....".format(sub)))
+    print()  
     time.sleep(1)
-    result = get_img(sub, "top")  
-    display(result)
+    result = get_img(sub, "top")
+    # Used an if else in all cases to check whether result is false or has the list
+    if not result:
+        sys.exit()
+    else: 
+        display(result)
 
 elif ch==2:
-    print(colored.green("[+] Fetching the new memes from r/{}....".format(sub)))
+    print(colored.green("[+] Fetching the new images from r/{}....".format(sub)))
+    print()
     time.sleep(1)
     result = get_img(sub, "new")
-    display(result)
+    if not result:
+        sys.exit()
+    else: 
+        display(result)
 
 elif ch==3:
-    print(colored.green("[+] Fetching the hot memes from r/{}....".format(sub)))
+    print(colored.green("[+] Fetching the hot images from r/{}....".format(sub)))
+    print()
     time.sleep(1)
     result = get_img(sub, "hot")
-    display(result)
+    if not result:
+        sys.exit()
+    else: 
+        display(result)
 
 elif ch==4:
-    print(colored.green("[+] Fetching the rising memes from r/{}....".format(sub)))
+    print(colored.green("[+] Fetching the rising images from r/{}....".format(sub)))
+    print()
     time.sleep(1)
     result = get_img(sub, "rising")
-    display(result)
+    if not result:
+        sys.exit()
+    else: 
+        display(result)
+    
+
 
 
