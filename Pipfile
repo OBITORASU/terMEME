@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+py-getch = "==1.0.1"
+requests = "==2.25.1"
+clint = "==0.5.1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

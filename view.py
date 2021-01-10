@@ -2,18 +2,16 @@ import subprocess
 import sys
 import time
 import random
+from getch import getch
+
+
+from banner import *
+from scrape import *
 
 # Clear up the terminal screen
 subprocess.call("clear", shell=True)
 
-from urllib.request import urlopen, URLError
-from getch import getch
-from clint.textui import colored
-from banner import banner
-from scrape import get_img
-
-
-# Function to display url using w3m-img inside the terminal
+# Function to display url using w3m-content inside the terminal
 def display(result):
     # Appending to a list and checking urls against it to prevent images from reappearing when randomizing 
     lst = []
@@ -29,71 +27,48 @@ def display(result):
                 subprocess.call("clear", shell=True)
                 sys.exit()
 
-# Loop until user enters a valid subreddit
-while(True):
-    sub = input(colored.green("Enter the name of a valid subreddit: "))
-    print()
-    print(colored.green("[+] Checking subreddit validity...."))
-    print()
-    try:
-        urlopen("https://www.reddit.com/r/{}".format(sub))
-        print(colored.green("[+] Subreddit found!"))
-        print()
-        break
-    except URLError:
-        print(colored.red("[-] Invalid subreddit!"))
-        print()
+def paste(result):
+
+    lst = []
+    while True:
+        text = random.choice(result)
+        if text not in lst:
+            subprocess.call("clear", shell=True)
+            lst.append(text)
+            print(colored.green("Press e to exit or any other key to continue...."))
+            print(text)
+            key = getch()
+            if key=="e":
+                subprocess.call("clear", shell=True)
+                sys.exit()
+
+def menu():
+    menu = {"1":"top","2":"new","3":"hot","4":"rising", "0":"exit"}
+    print(colored.green(f"""Wubba Lubba dub-dub!\nSelect a Category:\n"""))
+    for i in menu.values():
+        print(i,"\n")
+    choice=input("Enter your choice: ")
+    return menu.get(choice, "Invalid Choice")
 
 
-# Category menu
-print (colored.green("""Wubba Lubba dub-dub!
-
-Select a Category:
-1) Top
-2) New
-3) Hot
-4) Rising
-5) Exit
-"""))
-
-# Loop until valid category is selected
-while(True):
-    
-    ch = int(input(colored.green("Enter your choice: ")))
-    print()
-    if ch==1 or ch==2 or ch==3 or ch==4 or ch==5:
-        if ch==5:
-            sys.exit()
+def get_categories(sub, choice):
+    print(colored.green("[+] Fetching the {} memes from r/{}....".format(choice, sub)))  
+    time.sleep(1)
+    result = get_content(sub, choice) 
+    for reddits in result:
+        print(reddits)
+        if reddits.endswith('jpg') or reddits.endswith("jpg") or reddits.endswith("png"):
+            display(result)
         else:
-            break
-        
-    else:
-        print(colored.red("[-] Invalid input detected please enter a valid input!"))
-        print()
+            paste(result)
 
-# Fetch the image url based on the user set parameters and display them        
-if ch==1:
-    print(colored.green("[+] Fetching the top memes from r/{}....".format(sub)))  
-    time.sleep(1)
-    result = get_img(sub, "top")  
-    display(result)
 
-elif ch==2:
-    print(colored.green("[+] Fetching the new memes from r/{}....".format(sub)))
-    time.sleep(1)
-    result = get_img(sub, "new")
-    display(result)
+if __name__ == "__main__":
 
-elif ch==3:
-    print(colored.green("[+] Fetching the hot memes from r/{}....".format(sub)))
-    time.sleep(1)
-    result = get_img(sub, "hot")
-    display(result)
+    print(banner())
 
-elif ch==4:
-    print(colored.green("[+] Fetching the rising memes from r/{}....".format(sub)))
-    time.sleep(1)
-    result = get_img(sub, "rising")
-    display(result)
+    sub = check_validity()
 
+    while True:
+        get_categories(sub, menu())
 
