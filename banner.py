@@ -1,8 +1,8 @@
 from clint.textui import colored
 # coding=utf-8
 
-
-banner = colored.green("""
+def banner(): 
+   return colored.green("""
                         ⠙⠋⠉⠉⠉⠈⠉⠉⠙⢿⣿⣿⣿⣿⣿⡿⠋⠉⠀⠀⠀⠀⠀⠈⠉⠉⠛⢿⣿⣿
                         ⠀⢀⣤⣴⣶⣶⣤⣄⣀⠸⣿⣿⣿⣿⣿⣧⣠⣤⣶⣾⣿⣿⣿⣿⣶⣤⣀⠀⠹⣿
                         ⣷⠿⠛⠋⠉⠛⠛⠋⠉⠀⣿⣿⣿⣿⣿⣿⡟⠉⠁⠉⠛⠛⠛⠛⠛⠻⠿⣷⣶⣿
@@ -27,4 +27,3 @@ banner = colored.green("""
                      \__\___|_|  |_|  |_|______|_|  |_|______|
 """)
 
-print(banner)
