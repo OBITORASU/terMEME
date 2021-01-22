@@ -66,7 +66,7 @@ if ch==1:
     result = get_img(sub, "top")
     # Used an if else in all cases to check whether result is false or has the list
     if not result:
-        sys.exit()
+        sys.exit(1)
     else: 
         display(result)
 
@@ -76,7 +76,7 @@ elif ch==2:
     time.sleep(1)
     result = get_img(sub, "new")
     if not result:
-        sys.exit()
+        sys.exit(1)
     else: 
         display(result)
 
@@ -86,7 +86,7 @@ elif ch==3:
     time.sleep(1)
     result = get_img(sub, "hot")
     if not result:
-        sys.exit()
+        sys.exit(1)
     else: 
         display(result)
 
@@ -96,7 +96,7 @@ elif ch==4:
     time.sleep(1)
     result = get_img(sub, "rising")
     if not result:
-        sys.exit()
+        sys.exit(1)
     else: 
         display(result)
     
