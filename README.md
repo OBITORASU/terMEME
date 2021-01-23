@@ -22,8 +22,12 @@ git clone https://github.com/OBITORASU/terMEME.git
 cd terMEME
 pip3 install -r requirements.txt
 
+(Debian)
 sudo apt-get install w3m-img
 sudo apt-get install imagemagick
+
+(Arch)
+sudo pacman -S w3m imlib2 imagemagick
 ```
 With the above done, you are ready to go. Fire up the script by running:
 ```
