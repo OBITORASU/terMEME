@@ -1,9 +1,27 @@
 import json
 import requests
-import time
+import random
+import subprocess
+import sys
 
 from clint.textui import colored
 from urllib.request import urlopen, URLError
+from getch import getch
+
+def display(result):
+    # Appending to a list and checking urls against it to prevent images from reappearing when randomizing 
+    lst = []
+    while True:
+        url = random.choice(result)
+        if url not in lst:
+            subprocess.call("w3m -o ext_image_viewer=false -o confirm_qq=false {}".format(url), shell=True)
+            subprocess.call("clear", shell=True)
+            lst.append(url)
+            print(colored.green("Press e to exit or any other key to continue...."))
+            key = getch()
+            if key=="e":
+                subprocess.call("clear", shell=True)
+                sys.exit()
 
 # Check subreddit validity if url is invalid return error else return subreddit as sub
 def check_validity():
