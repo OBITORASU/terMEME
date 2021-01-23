@@ -6,7 +6,7 @@ from clint.textui import colored
 from banner import *
 from scrape import *
 
-# Function to display url using w3m-img inside the terminal
+# Main Function
 def main():
     
     # Clear up the terminal screen
