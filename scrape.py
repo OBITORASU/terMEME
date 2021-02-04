@@ -9,7 +9,12 @@ from urllib.request import urlopen, URLError
 from getch import getch
 
 def display(result):
-    # Appending to a list and checking urls against it to prevent images from reappearing when randomizing 
+    """Display images fetched from any subreddit in your terminal
+
+    Args:
+        result (list): A list of urls which you want to display
+    """
+
     lst = []
     while True:
         url = random.choice(result)
@@ -25,6 +30,12 @@ def display(result):
 
 # Check subreddit validity if url is invalid return error else return subreddit as sub
 def check_validity():
+    """Check validity of a subreddit
+
+    Returns:
+        sub (string): Returns the name of the subreddit if it is valid
+    """
+
     while True:
         sub = input(colored.green("Enter the name of a valid subreddit: "))
         print()
@@ -49,7 +60,16 @@ def check_validity():
 
 # Get a list of image url from a supplied subreddit and category 
 def get_img(str1, str2):
-    # Big number for major shenanigans 
+    """Fetch image url links of a subreddit via .json method
+
+    Args:
+        str1 (string): Subreddit name
+        str2 (string): Catagory type (top, rising, etc)
+
+    Returns:
+        image_lsit (list): Returns a list of urls of scraped images
+    """
+
     number = 99999
     url = "https://www.reddit.com/r/{}/{}/".format(str1,str2)
     # Request to fetch .json data

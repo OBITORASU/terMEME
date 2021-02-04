@@ -6,7 +6,7 @@ from clint.textui import colored
 from banner import *
 from scrape import *
 
-# Main Function
+
 def main():
     
     # Clear up the terminal screen
