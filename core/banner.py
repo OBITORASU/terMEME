@@ -3,7 +3,13 @@
 green = "\033[92m"    
 reset = "\033[0m"
 
-def banner(): 
+def banner():
+   """Display the terMEME banner.
+
+   Returns:
+      string: Returns the colored terMEME banner.
+   """  
+   
    return ("""%s
 
                      _            __  __ ______ __  __ ______ 
