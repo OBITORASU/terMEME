@@ -1,8 +1,10 @@
-from clint.textui import colored
 # coding=utf-8
 
+green = "\033[92m"    
+reset = "\033[0m"
+
 def banner(): 
-   return colored.green("""
+   return ("""%s
 
                      _            __  __ ______ __  __ ______ 
                     | |          |  \/  |  ____|  \/  |  ____|
@@ -10,5 +12,4 @@ def banner():
                     | __/ _ \ '__| |\/| |  __| | |\/| |  __|  
                     | ||  __/ |  | |  | | |____| |  | | |____ 
                      \__\___|_|  |_|  |_|______|_|  |_|______|
-""")
-
+%s""" %(green, reset))

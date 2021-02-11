@@ -2,13 +2,17 @@ import subprocess
 import sys
 import time
 
-from clint.textui import colored
 from core.banner import banner
 from core.scrape import *
 
 
 def main():
     
+    # Define colors 
+    red = "\033[91m"
+    green = "\033[92m"    
+    reset = "\033[0m"
+
     # Clear up the terminal screen
     subprocess.call("clear", shell=True)
     print(banner())
@@ -16,7 +20,7 @@ def main():
     sub = check_validity()
 
     # Category menu
-    print (colored.green("""[+] Wubba Lubba dub-dub!
+    print ("""%s[+] Wubba Lubba dub-dub!
 
     Select a Category:
     1) Top
@@ -24,12 +28,12 @@ def main():
     3) Hot
     4) Rising
     5) Exit
-    """))
+    """%(green))
 
     # Loop until valid category is selected
     while(True):
         
-        ch = int(input(colored.green("Enter your choice: ")))
+        ch = int(input("%sEnter your choice: %s"%(green, reset)))
         print()
         if ch==1 or ch==2 or ch==3 or ch==4 or ch==5:
             if ch==5:
@@ -38,12 +42,12 @@ def main():
                 break
             
         else:
-            print(colored.red("[-] Invalid input detected please enter a valid input!"))
+            print("%s[-] Invalid input detected please enter a valid input!"%(red))
             print()
 
     # Fetch the image url based on the user set parameters and display them        
     if ch==1:
-        print(colored.green("[+] Fetching the top images from r/{}....".format(sub)))
+        print("%s[+] Fetching the top images from r/{}....".format(sub)%(green))
         print()  
         time.sleep(1)
         result = get_img(sub, "top")
@@ -54,7 +58,7 @@ def main():
             display(result)
 
     elif ch==2:
-        print(colored.green("[+] Fetching the new images from r/{}....".format(sub)))
+        print("%s[+] Fetching the new images from r/{}....".format(sub)%(green))
         print()
         time.sleep(1)
         result = get_img(sub, "new")
@@ -64,7 +68,7 @@ def main():
             display(result)
 
     elif ch==3:
-        print(colored.green("[+] Fetching the hot images from r/{}....".format(sub)))
+        print("%s[+] Fetching the hot images from r/{}....".format(sub)%(green))
         print()
         time.sleep(1)
         result = get_img(sub, "hot")
@@ -74,7 +78,7 @@ def main():
             display(result)
 
     elif ch==4:
-        print(colored.green("[+] Fetching the rising images from r/{}....".format(sub)))
+        print("%s[+] Fetching the rising images from r/{}....".format(sub)%(green))
         print()
         time.sleep(1)
         result = get_img(sub, "rising")

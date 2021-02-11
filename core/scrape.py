@@ -4,9 +4,12 @@ import random
 import subprocess
 import sys
 
-from clint.textui import colored
 from urllib.request import urlopen, URLError
 from getch import getch
+
+red = "\033[91m"
+green = "\033[92m"    
+reset = "\033[0m"
 
 def display(result):
     """Display images fetched from any subreddit in your terminal
@@ -22,7 +25,7 @@ def display(result):
             subprocess.call("w3m -o ext_image_viewer=false -o confirm_qq=false {}".format(url), shell=True)
             subprocess.call("clear", shell=True)
             lst.append(url)
-            print(colored.green("Press e to exit or any other key to continue...."))
+            print("%sPress e to exit or any other key to continue....%s"%(green, reset))
             key = getch()
             if key=="e":
                 subprocess.call("clear", shell=True)
@@ -37,23 +40,23 @@ def check_validity():
     """
 
     while True:
-        sub = input(colored.green("Enter the name of a valid subreddit: "))
+        sub = input("%sEnter the name of a valid subreddit: "%(green))
         print()
-        print(colored.green("[+] Checking subreddit validity...."))
+        print("%s[+] Checking subreddit validity...."%(green))
         print()
         try:
             if sub.isspace():
-                print(colored.red("[-] Invalid subreddit"))
+                print("%s[-] Invalid subreddit"%(red))
                 print()
                                
             else:
                 urlopen("https://www.reddit.com/r/{}".format(sub))
-                print(colored.green("[+] Subreddit found!"))
+                print("%s[+] Subreddit found!"%(green))
                 print()
                 break
                 
         except URLError:
-            print(colored.red("[-] Invalid subreddit!"))
+            print("%s[-] Invalid subreddit!"%(red))
             print()
 
     return sub
@@ -88,7 +91,7 @@ def get_img(str1, str2):
     
     # If img url list is empty return false
     if not img_list:
-        print(colored.red("[-] Back luck partner! No images found in subreddit :("))
+        print("%s[-] Back luck partner! No images found in subreddit!%s"%(red, reset))
         print()
         return False
     # Return the list of image urls
