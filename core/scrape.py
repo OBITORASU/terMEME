@@ -12,10 +12,10 @@ green = "\033[92m"
 reset = "\033[0m"
 
 def display(result):
-    """Display images fetched from any subreddit in your terminal
+    """Display images fetched from any subreddit in your terminal.
 
     Args:
-        result (list): A list of urls which you want to display
+        result (list): A list of urls which you want to display.
     """
 
     lst = []
@@ -33,10 +33,10 @@ def display(result):
 
 # Check subreddit validity if url is invalid return error else return subreddit as sub
 def check_validity():
-    """Check validity of a subreddit
+    """Check validity of a subreddit.
 
     Returns:
-        sub (string): Returns the name of the subreddit if it is valid
+        sub (string): Returns the name of the subreddit if it is valid.
     """
 
     while True:
@@ -63,14 +63,14 @@ def check_validity():
 
 # Get a list of image url from a supplied subreddit and category 
 def get_img(str1, str2):
-    """Fetch image url links of a subreddit via .json method
+    """Fetch image url links of a subreddit via .json method.
 
     Args:
-        str1 (string): Subreddit name
-        str2 (string): Catagory type (top, rising, etc)
+        str1 (string): Subreddit name.
+        str2 (string): Catagory type (top, rising, etc).
 
     Returns:
-        image_lsit (list): Returns a list of urls of scraped images
+        image_lsit (list): Returns a list of urls of scraped images.
     """
 
     number = 99999
