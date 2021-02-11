@@ -3,8 +3,8 @@ import sys
 import time
 
 from clint.textui import colored
-from banner import *
-from scrape import *
+from core.banner import banner
+from core.scrape import *
 
 
 def main():
