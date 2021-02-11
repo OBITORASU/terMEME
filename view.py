@@ -5,14 +5,12 @@ import time
 from core.banner import banner
 from core.scrape import *
 
+# Define colors 
+red = "\033[91m"
+green = "\033[92m"    
+reset = "\033[0m"
 
 def main():
-    
-    # Define colors 
-    red = "\033[91m"
-    green = "\033[92m"    
-    reset = "\033[0m"
-
     # Clear up the terminal screen
     subprocess.call("clear", shell=True)
     print(banner())
@@ -89,4 +87,8 @@ def main():
     
 
 if __name__=="__main__": 
-    main() 
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n%s[-] SIGTERM recievied terminating...%s"%(red,reset))
+        sys.exit(1)
