@@ -3,7 +3,7 @@
 
 terMEME is a terminal based scraper written in Python 3 which allows Linux users to view random images from subreddits inside the comfort of their terminals.
 
-**NOTE:**  Best use suggestion is to browse memes but nothing is stopping you ( ͡° ͜ʖ ͡°) 
+**NOTE:**  Best use suggestion is to browse memes (hence the name) but it works for any/all images. 
 
 ## Dependencies 
 
