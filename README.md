@@ -14,7 +14,7 @@ terMEME is a terminal based scraper written in Python 3 which allows Linux users
 
 ## Python Dependencies 
 
-All the dependencies for the project are listed in the requirements.txt.
+All the dependencies for the project are listed in the ```requirements.txt```.
 
 ## Installation 
 ```
