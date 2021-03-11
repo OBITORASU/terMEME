@@ -15,6 +15,8 @@ def main():
     subprocess.call("clear", shell=True)
     print(banner())
     print()
+    
+    # Check the validity of user entered subreddit and assign its value to sub
     sub = check_validity()
 
     # Category menu
