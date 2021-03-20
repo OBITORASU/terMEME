@@ -5,9 +5,7 @@ reset = "\033[0m"
 
 def banner():
    """Display the terMEME banner.
-
-   Returns:
-      string: Returns the colored terMEME banner.
+   
    """  
    
    return ("""%s
