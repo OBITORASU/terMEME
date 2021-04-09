@@ -20,7 +20,7 @@ All the python dependencies for this project are listed in the ```requirements.t
 ```
 git clone https://github.com/OBITORASU/terMEME.git
 cd terMEME
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 (Debian)
 sudo apt-get install w3m-img
