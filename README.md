@@ -31,7 +31,7 @@ sudo pacman -S w3m imlib2 imagemagick
 ```
 With the above done, you are ready to go. Fire up the script by running:
 ```
-python view.py
+python3 view.py
 ```
 ## Navigation
 Use your q key to quit the w3m preview inside your terminal. On the prompt pressing e will terminate the program and any other key will bombard you with more random images. If your terminal is incapable of displaying the images in it, it will switch you to an external view on imagemagick. In the second case pressing q twice will get you back to the prompt by quitting the preview for both imagemagick and w3m.
