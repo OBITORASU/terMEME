@@ -34,11 +34,12 @@ With the above done, you are ready to go. Fire up the script by running:
 python3 view.py
 ```
 ## Navigation
-Use your q key to quit the w3m preview inside your terminal. On the prompt pressing e will terminate the program and any other key will bombard you with more random images. If your terminal is incapable of displaying the images in it, it will switch you to an external view on imagemagick. In the second case pressing q twice will get you back to the prompt by quitting the preview for both imagemagick and w3m.
+Use your q key to quit the w3m preview inside your terminal. On the user prompt pressing e will terminate the program, and any other button will be make the script continue to run. 
+If your terminal is incapable of displaying the images inside it, it will switch you to an external view on imagemagick. In this case pressing, q for the first time will quit the imagemagick preview and then pressing it a second time will get you back to the user prompt by terminating the w3m prompt.
 
 ---
 **NOTE:**
 
-**Sometimes validating the subreddit might result in false positives, if you are certain the entered subreddit exists just try again and it should work.**
+**In rare cases, validating the subreddit might result in false positives, if you are certain the entered subreddit exists just try again once or twice and it should work.**
 
 ---
