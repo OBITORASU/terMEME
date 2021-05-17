@@ -4,7 +4,7 @@ green = "\033[92m"
 reset = "\033[0m"
 
 def banner():
-   """Display the terMEME banner.
+   """ Display the terMEME banner.
    
    """  
    
