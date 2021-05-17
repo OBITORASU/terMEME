@@ -31,7 +31,7 @@ sudo pacman -S w3m imlib2 imagemagick
 ```
 With the above done, you are ready to go. Fire up the script by running:
 ```
-python3 view.py
+python3 termeme.py
 ```
 ## Navigation
 Use your q key to quit the w3m preview inside your terminal. On the user prompt pressing e will terminate the program, and any other button will be make the script continue to run. 
