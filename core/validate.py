@@ -7,10 +7,10 @@ green = "\033[92m"
 
 # Check subreddit validity if url is invalid return error else return subreddit as sub
 def check_validity():
-    """Check validity of a subreddit.
+    """ Check validity of a subreddit.
 
     Returns:
-        sub (string): Returns the name of the subreddit if it is valid.
+        sub([string]): Returns the name of the subreddit if it is valid.
     """
 
     while True:
