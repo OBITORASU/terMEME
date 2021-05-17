@@ -7,19 +7,19 @@ red = "\033[91m"
 reset = "\033[0m"
 
 # Get a list of image url from a supplied subreddit and category 
-def get_img(str1, str2):
-    """Fetch image url links of a subreddit via .json method.
+def get_img(sub, cat):
+    """ Fetch image url links of a subreddit via .json method.
 
     Args:
-        str1 (string): Subreddit name.
-        str2 (string): Catagory type (top, rising, etc).
+        sub([string]): Subreddit name.
+        cat([string]): Catagory type (top, rising, etc).
 
     Returns:
-        image_lsit (list): Returns a list of urls of scraped images.
+        image_lsit([list]): Returns a list of urls of scraped images.
     """
 
     number = 99999
-    url = "https://www.reddit.com/r/{}/{}/".format(str1,str2)
+    url = "https://www.reddit.com/r/{}/{}/".format(sub,cat)
     # Request to fetch .json data
     r = requests.get("{}.json?limit={}".format(url, number), headers = {'user-agent': 'Mozilla/5.0'})
     
