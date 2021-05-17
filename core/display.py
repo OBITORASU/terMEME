@@ -11,10 +11,10 @@ reset = "\033[0m"
 
 # Function to display the image urls in results inside the terminal
 def display_img(result):
-    """Display images fetched from any subreddit in your terminal.
+    """ Display images fetched from any subreddit in your terminal.
 
     Args:
-        result (list): A list of urls which you want to display.
+        result ([list]): A list of urls which you want to display.
     """
 
     lst = []
