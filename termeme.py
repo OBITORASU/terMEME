@@ -17,7 +17,7 @@ reset = "\033[0m"
 choices = {1:"top", 2: "new", 3: "hot",4: "rising"}
 
 # Function to fetch images and display them
-def get_memes(choice, sub):
+def fetch_choices(choice, sub):
     """ Fetch the result list containing image urls for given subreddit and display them 
     using w3m-img inside the terminal.
 
@@ -73,7 +73,7 @@ def main():
             print()
 
     # Call function to display image urls fetched for respective sub and category 
-    get_memes(ch, sub)
+    fetch_choices(ch, sub)
             
 # Execute main function and exit upon keyboard interrupt
 if __name__=="__main__": 
