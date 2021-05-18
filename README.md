@@ -37,6 +37,14 @@ python3 termeme.py
 Use your q key to quit the w3m preview inside your terminal. On the user prompt pressing e will terminate the program, and any other button will be make the script continue to run. 
 If your terminal is incapable of displaying the images inside it, it will switch you to an external view on imagemagick. In this case pressing, q for the first time will quit the imagemagick preview and then pressing it a second time will get you back to the user prompt by terminating the w3m prompt.
 
+## For Contributors
+All the core functionalities of the script are present in the core directory in their respective files. `termeme.py` calls all the necessary functions from these files under core for its operation. 
+
+- `banner.py` contains the banner of the script.
+- `display.py` contains the function responsible for displaying the image from their url inside your terminal.
+- `fetch.py` is responsible for fetching image url from targeted subreddits.
+- `validate.py` validates the authenticity of the subreddit requested by the user, that is if its a valid subreddit or otherwise.
+
 ---
 **NOTE:**
 
