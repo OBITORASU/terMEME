@@ -33,6 +33,8 @@ With the above done, you are ready to go. Fire up the script by running:
 ```
 python3 termeme.py
 ```
+Enjoy all the memes inside your terminal now! 
+
 ## Navigation
 Use your q key to quit the w3m preview inside your terminal. On the user prompt pressing e will terminate the program, and any other button will be make the script continue to run. 
 If your terminal is incapable of displaying the images inside it, it will switch you to an external view on imagemagick. In this case pressing, q for the first time will quit the imagemagick preview and then pressing it a second time will get you back to the user prompt by terminating the w3m prompt.
