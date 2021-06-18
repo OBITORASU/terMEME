@@ -24,7 +24,7 @@ def display_img(result):
             subprocess.call("w3m -o ext_image_viewer=false -o confirm_qq=false {}".format(url), shell=True)
             subprocess.call("clear", shell=True)
             lst.append(url)
-            print("%sPress e to exit or any other key to continue....%s"%(green, reset))
+            print("%sPress 'e' to exit or any other key to continue....%s"%(green, reset))
             key = getch()
             if key=="e":
                 subprocess.call("clear", shell=True)
