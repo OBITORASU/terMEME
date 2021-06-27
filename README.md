@@ -10,7 +10,7 @@ terMEME is a terminal based web scraper written in Python 3 which allows Linux u
 - `w3m-img or imlib2`
     - For image rendering inside the terminal.
 - `imagemagick`
-    - If your terminal has trouble rendering the images, it will have the option to display the image externally.
+    - If your terminal has trouble rendering the images, it will have the option to display the images externally.
 
 ## Python Dependencies 
 
