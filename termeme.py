@@ -18,7 +18,7 @@ choices = {1:"top", 2: "new", 3: "hot",4: "rising"}
 
 # Function to fetch images and display them
 def fetch_choices(choice, sub):
-    """ Fetch the result list containing image urls for given subreddit and display them 
+    """ Fetch the list of results containing image urls for given subreddit and display them 
     using w3m-img inside the terminal.
 
     Args:
