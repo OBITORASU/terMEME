@@ -80,5 +80,5 @@ if __name__=="__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n%s[-] SIGTERM recievied terminating...%s"%(red,reset))
+        print("\n%s[-] SIGTERM receivied terminating...%s"%(red,reset))
         sys.exit(1)
