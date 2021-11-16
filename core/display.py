@@ -21,11 +21,11 @@ def display_img(result):
     while True:
         url = random.choice(result)
         if url not in lst:
-            subprocess.call("w3m -o ext_image_viewer=false -o confirm_qq=false {}".format(url), shell=True)
-            subprocess.call("clear", shell=True)
+            subprocess.call(["w3m", "-o", "ext_image_viewer=false", "-o", "confirm_qq=false", url])
+            subprocess.call(["clear"])
             lst.append(url)
             print("%sPress 'e' to exit or any other key to continue....%s"%(green, reset))
             key = getch()
             if key=="e":
-                subprocess.call("clear", shell=True)
+                subprocess.call(["clear"])
                 sys.exit()
